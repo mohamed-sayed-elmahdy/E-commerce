@@ -1575,6 +1575,106 @@ header .toggle-btn:hover {
   }
 
 
+/* Download Section */
+.download-section {
+    margin: 8rem auto;
+    width: 100%;
+}
+.download-section .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background: linear-gradient(
+      279.29deg,
+      rgba(122, 179, 191, 0.2) 14.52%,
+      rgba(244, 195, 120, 0.2) 93.59%,
+      rgba(254, 196, 114, 0.2) 100%
+    );
+    border-radius: 16px;
+    max-width: 1200px;
+    min-height: 300px;
+    max-height: 700px;
+    position: relative;
+  }
+  
+  .download-section .content {
+    flex: 1;
+    max-width: 500px;
+    margin-inline-start: 2rem;
+  }
+  
+  .content h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .content .highlight {
+    color: #c3915b;
+  }
+  
+  .content p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #000000;
+    font-weight: 700;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 16px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .buttons a img {
+    width: 140px;
+    height: auto;
+  }
+  
+  .cyclebg {
+    width: 360px;
+    height: 360px;
+    background: #B48340;
+    border-radius: 50%;
+    border: 6px solid white;
+    margin-inline-end: 3rem;
+  }
+  .phone-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    max-width: 250px;
+    position: absolute;
+    right: 120px;
+    top: -50px;
+  }
+  
+  .phone-image img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+  }
+  
+  @media (max-width: 768px) {
+    .download-section {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .content {
+      margin-bottom: 20px;
+    }
+  
+    .phone-image img {
+      max-width: 200px;
+    }
+  }
+
+
   /* Footer */
 
   .footer {
@@ -1615,6 +1715,7 @@ header .toggle-btn:hover {
     display: flex;
     flex: 2 1 500px;
     justify-content: space-around;
+    flex-wrap: wrap;
   }
   
   .footer-links ul {
