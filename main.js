@@ -124,21 +124,21 @@ function UpdateContent(lang) {
 const languageToggle = document.getElementById("languageToggle");
 // Fix Border-radius
 const input = document.querySelector('.navbar .search-bar input[type="text"]');
-const button = document.querySelector('.navbar .search-bar button');
+const button = document.querySelector(".navbar .search-bar button");
 
 languageToggle.addEventListener("click", () => {
   if (languageToggle.textContent === "عربي") {
     UpdateContent("arabic");
     document.body.style.direction = "rtl";
     languageToggle.textContent = "English";
-    input.style.borderRadius = '0 8px 8px 0';
-    button.style.borderRadius = '5px 0 0 5px';
+    input.style.borderRadius = "0 8px 8px 0";
+    button.style.borderRadius = "5px 0 0 5px";
   } else {
     UpdateContent("english");
     document.body.style.direction = "ltr";
     languageToggle.textContent = "عربي";
-    input.style.borderRadius = '8px 0 0 8px';
-    button.style.borderRadius = '0 5px 5px 0';
+    input.style.borderRadius = "8px 0 0 8px";
+    button.style.borderRadius = "0 5px 5px 0";
   }
 });
 
@@ -221,11 +221,7 @@ menus.forEach((menu, index) => {
   });
 });
 
-
-
-
-
-// Slider 
+// Slider
 let slider = document.querySelector(".slider .list");
 let items = document.querySelectorAll(".slider .list .item");
 let next = document.getElementById("next");
@@ -263,3 +259,23 @@ dots.forEach((li, key) => {
 window.onresize = function (event) {
   reloadSlider();
 };
+
+// Login popup
+const popup = document.getElementById("loginpopup");
+const openPopup = document.getElementById("openPopup");
+const closePopup = document.getElementById("closePopup");
+
+openPopup.addEventListener("click", (e) => {
+  e.preventDefault();
+  popup.classList.add("show");
+});
+
+closePopup.addEventListener("click", () => {
+  popup.classList.remove("show");
+});
+
+window.addEventListener("click", (event) => {
+  if (event.target === popup) {
+    popup.classList.remove("show");
+  }
+});

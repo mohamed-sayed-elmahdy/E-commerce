@@ -138,7 +138,7 @@
         </div>
         <div class="leftIcons">
           <div class="right-section">
-            <a href="#" class="profile"
+            <a href="#" class="profile" id="openPopup"
               ><i class="fa-regular fa-user"></i>
               <span class="textIcon"
                 >Login <br />
@@ -216,7 +216,7 @@
         </div>
       </div>
     </div>
-
+    <!-- Slider -->
     <div class="slider">
       <div class="list">
         <div class="item">
@@ -846,35 +846,35 @@
       </div>
     </section>
     <!-- Download Section -->
-     <section class="download-section">
-        <div class="container">
-            <div class="content">
-              <h1>
-                Download Our <span class="highlight">Mobile App</span>
-              </h1>
-              <p>Download Now:</p>
-              <div class="buttons">
-                <a href="https://play.google.com/store" target="_blank">
-                  <img src="images/appstorebadge.png" alt="Google Play Badge" />
-                </a>
-                <a href="https://www.apple.com/app-store/" target="_blank">
-                  <img src="images/appstorebadge2.png" alt="App Store Badge" />
-                </a>
-              </div>
-            </div>
-        <div class="cyclebg">
-            <div class="phone-image">
-                <img src="images/phone.png" alt="Phone Display" />
-              </div>
-        </div>
+    <section class="download-section">
+      <div class="container">
+        <div class="content">
+          <h1>Download Our <span class="highlight">Mobile App</span></h1>
+          <p>Download Now:</p>
+          <div class="buttons">
+            <a href="https://play.google.com/store" target="_blank">
+              <img src="images/appstorebadge.png" alt="Google Play Badge" />
+            </a>
+            <a href="https://www.apple.com/app-store/" target="_blank">
+              <img src="images/appstorebadge2.png" alt="App Store Badge" />
+            </a>
           </div>
-     </section>
-   
+        </div>
+        <div class="cyclebg">
+          <div class="phone-image">
+            <img src="images/phone.png" alt="Phone Display" />
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-logo-section">
-         <a href="#"><img src="images/logo.png" alt="Logo" class="footer-logo" /></a> 
+          <a href="#"
+            ><img src="images/logo.png" alt="Logo" class="footer-logo"
+          /></a>
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
@@ -907,7 +907,9 @@
         </div>
         <div class="footer-contact">
           <ul>
-            <li><i class="fas fa-phone-alt"></i> +977 564 5555 | +977 564 5555</li>
+            <li>
+                <i class="fa-solid fa-phone"></i> +977 564 5555 | +977 564 5555
+            </li>
             <li><i class="fas fa-envelope"></i> Email@domain.com</li>
             <li><i class="fas fa-globe"></i> www.domain.com</li>
           </ul>
@@ -928,6 +930,31 @@
         </div>
       </div>
     </footer>
+
+    <!-- popup -->
+    <div id="loginpopup" class="Loginpopup">
+      <div class="popup-content">
+        <span id="closePopup" class="close">
+          <i class="fas fa-times"></i>
+        </span>
+        <h2 class="LoginpopupTitle">Login</h2>
+        <form>
+          <input
+            type="text"
+            placeholder="Username"
+            class="input-field"
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            class="input-field"
+            required
+          />
+          <button type="submit" class="login-btn">Login</button>
+        </form>
+      </div>
+    </div>
 
     <script src="main.js"></script>
   </body>
