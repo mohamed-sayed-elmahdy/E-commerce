@@ -1589,6 +1589,9 @@ header .toggle-btn:hover {
     justify-content: space-between;
     gap: 20px;
     margin: 0 auto;
+    font-weight: 700;
+    color: #000;
+  
   }
   
   .footer-logo-section {
@@ -1620,9 +1623,20 @@ header .toggle-btn:hover {
   }
   
   .footer-links li {
-    font-size: 14px;
-    color: #333;
+    font-size: 16px;
+    color: #000000;
     margin-bottom: 10px;
+  }
+  .footer-links li a {
+    color: black;
+  }
+  .footer-links li a:visited {
+    color: black;
+  }
+  .footer-contact li i {
+    margin-inline-end: 8px;
+    color: #555;
+    font-size: 16px;
   }
   
   .footer-contact {
@@ -1649,19 +1663,19 @@ header .toggle-btn:hover {
   
   .footer-payment {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 40px;
   }
   
   .footer-payment p {
     font-size: 16px;
-    color: #555;
+    color: #000000;
     margin-bottom: 10px;
   }
   
   .payment-logos {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 25px;
     flex-wrap: wrap;
   }
   
