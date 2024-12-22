@@ -1731,6 +1731,9 @@ header .toggle-btn:hover {
   .footer-links li a {
     color: black;
   }
+  .footer-links li a:hover {
+    color: #ffc107;
+  }
   .footer-links li a:visited {
     color: black;
   }
