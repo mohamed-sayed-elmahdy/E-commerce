@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Header</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Font awesome link-->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <!-- Logo (Hidden on Desktop) -->
+      <div class="logo"><img src="images/logo.png" alt="logo" /></div>
+
+      <!-- Desktop Links -->
+      <nav class="desktop-links">
+        <a href="#">About us</a>
+        <a href="#">My account</a>
+        <a href="#">Wishlist</a>
+        <a href="#">Order Tracking</a>
+      </nav>
+
+      <!-- Right Side Menus -->
+      <div class="right-container">
+        <a href="#" class="contact-link">Contact us</a>
+
+        <!-- Language Toggle -->
+        <button id="languageToggle" class="toggle-btn">عربي</button>
+
+        <!-- Currency Toggle -->
+        <button id="currencyToggle" class="toggle-btn">USD</button>
+      </div>
+    </header>
+    <nav class="navbar" id="header">
+      <div class="nav container">
+        <a href="#" class="nav__logo"
+          ><img src="images/logo.png" alt="logo"
+        /></a>
+        <div class="left-section">
+          <div class="custom-menu">
+            <div class="labelContainer">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <span>Delivery to</span>
+                <span class="menu-label">Abu Dhabi</span>
+              </div>
+            </div>
+            <ul class="menu-options">
+              <li>Abu Dhabi</li>
+              <li>Dubai</li>
+              <li>Sharjah</li>
+            </ul>
+          </div>
+
+          <div class="search-bar">
+            <input type="text" placeholder="Search for products.." />
+            <button>Search</button>
+          </div>
+        </div>
+
+        <div class="nav__menu" id="nav-menu">
+          <div class="ProfileAndLocation">
+            <a href="#" class="profile"
+              ><i class="fa-regular fa-user"></i>
+              <span class="textIcon"
+                >Login <br />
+                Account</span
+              >
+            </a>
+            <div class="custom-menu" id="locationMenu">
+              <div class="labelContainer">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                  <span>Delivery to</span>
+                  <span class="menu-label">Abu Dhabi</span>
+                </div>
+              </div>
+              <ul class="menu-options">
+                <li>Abu Dhabi</li>
+                <li>Dubai</li>
+                <li>Sharjah</li>
+              </ul>
+            </div>
+          </div>
+
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="fa-solid fa-box-open"></i>
+                <span>Products</span>
+              </a>
+            </li>
+
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="fa-solid fa-bell"></i>
+                <span>What's New</span>
+              </a>
+            </li>
+
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="fa-solid fa-truck-fast"></i>
+                <span>Delivery</span>
+              </a>
+            </li>
+
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="fa-solid fa-tag"></i>
+                <span>Deals & Offers</span>
+              </a>
+            </li>
+
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="fa-solid fa-blog"></i>
+                <span>Blog</span>
+              </a>
+            </li>
+
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="fa-solid fa-phone"></i>
+                <span>Contact</span>
+              </a>
+            </li>
+          </ul>
+
+          <!-- Close Button -->
+          <div class="nav__close" id="nav-close">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+        </div>
+        <div class="leftIcons">
+          <div class="right-section">
+            <a href="#" class="profile"
+              ><i class="fa-regular fa-user"></i>
+              <span class="textIcon"
+                >Login <br />
+                Account</span
+              >
+            </a>
+            <a href="#"
+              ><i class="fa-regular fa-heart"> <span class="badge">3</span></i>
+              <span class="textIcon" id="Wishlist"> Wishlist</span>
+            </a>
+            <a href="#"
+              ><i class="fa-solid fa-cart-shopping price">
+                <span class="badge">3</span></i
+              >
+              <div class="totalPrice">
+                <span class="textIcon">Your cart </span>
+
+                <span class="price">$0.00</span>
+              </div>
+            </a>
+          </div>
+          <!-- Toggle Button -->
+          <div class="nav__toggle" id="nav-toggle">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="thirdNav">
+      <div class="thirdNavContainer">
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="fa-solid fa-box"></i>
+                <span>Products</span>
+              </a>
+            </li>
+
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="fa-solid fa-star"></i>
+                <span>What's New</span>
+              </a>
+            </li>
+
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="fa-solid fa-truck"></i>
+                <span>Delivery</span>
+              </a>
+            </li>
+
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="fa-solid fa-tags"></i>
+                <span>Deals & Offers</span>
+              </a>
+            </li>
+
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="fa-solid fa-pen-nib"></i>
+                <span>Blog</span>
+              </a>
+            </li>
+
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <i class="fa-solid fa-phone"></i>
+                <span>Contact</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="slider">
+      <div class="list">
+        <div class="item">
+          <img src="images/slider.png" alt="" />
+          <div class="contentContainer"></div>
+        </div>
+
+        <div class="item">
+          <img src="images/logo.png" alt="" />
+          <div class="contentContainer"></div>
+        </div>
+        <div class="item">
+          <video src="images/video.mp4" autoplay muted loop></video>
+          <div class="contentContainer"></div>
+        </div>
+        <div class="item">
+          <img src="images/slider.png" alt="" />
+          <div class="contentContainer"></div>
+        </div>
+        <div class="item">
+          <img src="images/slider.png" alt="" />
+          <div class="contentContainer"></div>
+        </div>
+      </div>
+      <div class="buttons">
+        <button id="prev"><</button>
+        <button id="next">></button>
+      </div>
+      <ul class="dots">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+
+    <!-- categories-section -->
+    <section class="categories-section">
+      <div class="categories-header">
+        <h2>Shop by categories</h2>
+        <a href="#" class="see-all"
+          ><span class="see-all">See All</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="categories-container">
+        <div class="category-card" style="background-color: #ffffcc">
+          <p class="product1">Soft Drinks</p>
+          <img src="images/product1.png" alt="Soft Drinks" />
+        </div>
+        <div class="category-card" style="background-color: #fdd7e4">
+          <p class="product2">Chocolate</p>
+          <img src="images/product2.png" alt="Chocolate" />
+        </div>
+        <div class="category-card" style="background-color: #ccffe5">
+          <p class="product3">Chapes</p>
+          <img src="images/product3.png" alt="Chapes" />
+        </div>
+        <div class="category-card" style="background-color: #fff0e5">
+          <p class="product4">Biscuits & Snacks</p>
+          <img src="images/product4.png" alt="Biscuits & Snacks" />
+        </div>
+        <div class="category-card" style="background-color: #ffdce5">
+          <p class="product5">Breads & Bakery</p>
+          <img src="images/product5.png" alt="Breads & Bakery" />
+        </div>
+        <div class="category-card" style="background-color: #cce5ff">
+          <p class="product6">Frozen Foods</p>
+          <img src="images/product6.png" alt="Frozen Foods" />
+        </div>
+      </div>
+    </section>
+    <!-- featured-products -->
+    <section class="featured-products">
+      <div class="section-header">
+        <h2>Featured Products</h2>
+        <a href="#" class="see-all"
+          ><span class="see-all">See All</span>
+          <i class="fas fa-arrow-right"></i
+        ></a>
+      </div>
+      <div class="product-grid">
+        <!-- Product Card -->
+        <div class="product-card">
+          <div class="product-badges">
+            <span class="badge sale">Sale 8%</span>
+            <span class="badge new">New</span>
+          </div>
+          <div class="imageContainer">
+            <img
+              src="images/product1.png"
+              alt="Soft Drinks"
+              class="product-image"
+            />
+          </div>
+          <div class="product-info">
+            <p class="category">Soft Drinks</p>
+            <h3 class="product-name">
+              100 Percent Apple Juice - 64 fl oz Bottle
+            </h3>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>4.5</span>
+            </div>
+            <div class="priceAndBtnCart">
+              <div class="price">
+                <span class="current-price">$48.85</span>
+                <span class="old-price">$48.85</span>
+              </div>
+              <button class="add-to-cart">
+                <i class="fas fa-shopping-cart"></i> Add
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-badges">
+            <span class="badge sale">Sale 8%</span>
+            <span class="badge new">New</span>
+          </div>
+          <div class="imageContainer">
+            <img
+              src="images/product2.png"
+              alt="Soft Drinks"
+              class="product-image"
+            />
+          </div>
+          <div class="product-info">
+            <p class="category">Soft Drinks</p>
+            <h3 class="product-name">
+              100 Percent Apple Juice - 64 fl oz Bottle
+            </h3>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>4.5</span>
+            </div>
+            <div class="priceAndBtnCart">
+              <div class="price">
+                <span class="current-price">$48.85</span>
+                <span class="old-price">$48.85</span>
+              </div>
+              <button class="add-to-cart">
+                <i class="fas fa-shopping-cart"></i> Add
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-badges">
+            <span class="badge sale">Sale 8%</span>
+            <span class="badge new">New</span>
+          </div>
+          <div class="imageContainer">
+            <img
+              src="images/product4.png"
+              alt="Soft Drinks"
+              class="product-image"
+            />
+          </div>
+          <div class="product-info">
+            <p class="category">Soft Drinks</p>
+            <h3 class="product-name">
+              100 Percent Apple Juice - 64 fl oz Bottle
+            </h3>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>4.5</span>
+            </div>
+            <div class="priceAndBtnCart">
+              <div class="price">
+                <span class="current-price">$48.85</span>
+                <span class="old-price">$48.85</span>
+              </div>
+              <button class="add-to-cart">
+                <i class="fas fa-shopping-cart"></i> Add
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-badges">
+            <span class="badge sale">Sale 8%</span>
+            <span class="badge new">New</span>
+          </div>
+          <div class="imageContainer">
+            <img
+              src="images/product5.png"
+              alt="Soft Drinks"
+              class="product-image"
+            />
+          </div>
+          <div class="product-info">
+            <p class="category">Soft Drinks</p>
+            <h3 class="product-name">
+              100 Percent Apple Juice - 64 fl oz Bottle
+            </h3>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>4.5</span>
+            </div>
+            <div class="priceAndBtnCart">
+              <div class="price">
+                <span class="current-price">$48.85</span>
+                <span class="old-price">$48.85</span>
+              </div>
+              <button class="add-to-cart">
+                <i class="fas fa-shopping-cart"></i> Add
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- overlaysection -->
+    <section class="overlaysection">
+      <div class="container">
+        <div class="row">
+          <article class="card">
+            <img src="images/molto1.png" alt="Molto Product 1" />
+            <div class="overlay">
+              <h3>A smart store for every people</h3>
+              <p>Feed your family the best</p>
+              <a href="#" class="shop-button"
+                ><i class="fa-solid fa-cart-shopping price"></i
+                ><span>Shop Now</span></a
+              >
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="images/molto2.png" alt="Molto Product 2" />
+            <div class="overlay">
+              <h3>A smart store for every people</h3>
+              <p>Feed your family the best</p>
+              <a href="#" class="shop-button"
+                ><i class="fa-solid fa-cart-shopping price"></i
+                ><span>Shop Now</span></a
+              >
+            </div>
+          </article>
+        </div>
+
+        <div class="row">
+          <article class="card">
+            <img src="images/molto3.png" alt="Molto Product 3" />
+            <div class="overlay">
+              <h3>A smart store for every people</h3>
+              <p>Feed your family the best</p>
+              <a href="#" class="shop-button"
+                ><i class="fa-solid fa-cart-shopping price"></i
+                ><span>Shop Now</span></a
+              >
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="images/molto4.png" alt="Molto Product 4" />
+            <div class="overlay">
+              <h3>A smart store for every people</h3>
+              <p>Feed your family the best</p>
+              <a href="#" class="shop-button"
+                ><i class="fa-solid fa-cart-shopping price"></i
+                ><span>Shop Now</span></a
+              >
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- featured-products more-->
+    <section class="featured-products">
+      <div class="section-header">
+        <h2>Featured Products</h2>
+        <a href="#" class="see-all"
+          ><span class="see-all">See All</span>
+          <i class="fas fa-arrow-right"></i
+        ></a>
+      </div>
+      <div class="product-grid">
+        <!-- Product Card -->
+        <div class="product-card">
+          <div class="product-badges">
+            <span class="badge sale">Sale 8%</span>
+            <span class="badge new">New</span>
+          </div>
+          <div class="imageContainer">
+            <img
+              src="images/product1.png"
+              alt="Soft Drinks"
+              class="product-image"
+            />
+          </div>
+          <div class="product-info">
+            <p class="category">Soft Drinks</p>
+            <h3 class="product-name">
+              100 Percent Apple Juice - 64 fl oz Bottle
+            </h3>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>4.5</span>
+            </div>
+            <div class="priceAndBtnCart">
+              <div class="price">
+                <span class="current-price">$48.85</span>
+                <span class="old-price">$48.85</span>
+              </div>
+              <button class="add-to-cart">
+                <i class="fas fa-shopping-cart"></i> Add
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-badges">
+            <span class="badge sale">Sale 8%</span>
+            <span class="badge new">New</span>
+          </div>
+          <div class="imageContainer">
+            <img
+              src="images/product2.png"
+              alt="Soft Drinks"
+              class="product-image"
+            />
+          </div>
+          <div class="product-info">
+            <p class="category">Soft Drinks</p>
+            <h3 class="product-name">
+              100 Percent Apple Juice - 64 fl oz Bottle
+            </h3>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>4.5</span>
+            </div>
+            <div class="priceAndBtnCart">
+              <div class="price">
+                <span class="current-price">$48.85</span>
+                <span class="old-price">$48.85</span>
+              </div>
+              <button class="add-to-cart">
+                <i class="fas fa-shopping-cart"></i> Add
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-badges">
+            <span class="badge sale">Sale 8%</span>
+            <span class="badge new">New</span>
+          </div>
+          <div class="imageContainer">
+            <img
+              src="images/product4.png"
+              alt="Soft Drinks"
+              class="product-image"
+            />
+          </div>
+          <div class="product-info">
+            <p class="category">Soft Drinks</p>
+            <h3 class="product-name">
+              100 Percent Apple Juice - 64 fl oz Bottle
+            </h3>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>4.5</span>
+            </div>
+            <div class="priceAndBtnCart">
+              <div class="price">
+                <span class="current-price">$48.85</span>
+                <span class="old-price">$48.85</span>
+              </div>
+              <button class="add-to-cart">
+                <i class="fas fa-shopping-cart"></i> Add
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-badges">
+            <span class="badge sale">Sale 8%</span>
+            <span class="badge new">New</span>
+          </div>
+          <div class="imageContainer">
+            <img
+              src="images/product5.png"
+              alt="Soft Drinks"
+              class="product-image"
+            />
+          </div>
+          <div class="product-info">
+            <p class="category">Soft Drinks</p>
+            <h3 class="product-name">
+              100 Percent Apple Juice - 64 fl oz Bottle
+            </h3>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>4.5</span>
+            </div>
+            <div class="priceAndBtnCart">
+              <div class="price">
+                <span class="current-price">$48.85</span>
+                <span class="old-price">$48.85</span>
+              </div>
+              <button class="add-to-cart">
+                <i class="fas fa-shopping-cart"></i> Add
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Product Card -->
+        <div class="product-card">
+          <div class="product-badges">
+            <span class="badge sale">Sale 8%</span>
+            <span class="badge new">New</span>
+          </div>
+          <div class="imageContainer">
+            <img
+              src="images/product1.png"
+              alt="Soft Drinks"
+              class="product-image"
+            />
+          </div>
+          <div class="product-info">
+            <p class="category">Soft Drinks</p>
+            <h3 class="product-name">
+              100 Percent Apple Juice - 64 fl oz Bottle
+            </h3>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>4.5</span>
+            </div>
+            <div class="priceAndBtnCart">
+              <div class="price">
+                <span class="current-price">$48.85</span>
+                <span class="old-price">$48.85</span>
+              </div>
+              <button class="add-to-cart">
+                <i class="fas fa-shopping-cart"></i> Add
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-badges">
+            <span class="badge sale">Sale 8%</span>
+            <span class="badge new">New</span>
+          </div>
+          <div class="imageContainer">
+            <img
+              src="images/product2.png"
+              alt="Soft Drinks"
+              class="product-image"
+            />
+          </div>
+          <div class="product-info">
+            <p class="category">Soft Drinks</p>
+            <h3 class="product-name">
+              100 Percent Apple Juice - 64 fl oz Bottle
+            </h3>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>4.5</span>
+            </div>
+            <div class="priceAndBtnCart">
+              <div class="price">
+                <span class="current-price">$48.85</span>
+                <span class="old-price">$48.85</span>
+              </div>
+              <button class="add-to-cart">
+                <i class="fas fa-shopping-cart"></i> Add
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-badges">
+            <span class="badge sale">Sale 8%</span>
+            <span class="badge new">New</span>
+          </div>
+          <div class="imageContainer">
+            <img
+              src="images/product4.png"
+              alt="Soft Drinks"
+              class="product-image"
+            />
+          </div>
+          <div class="product-info">
+            <p class="category">Soft Drinks</p>
+            <h3 class="product-name">
+              100 Percent Apple Juice - 64 fl oz Bottle
+            </h3>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>4.5</span>
+            </div>
+            <div class="priceAndBtnCart">
+              <div class="price">
+                <span class="current-price">$48.85</span>
+                <span class="old-price">$48.85</span>
+              </div>
+              <button class="add-to-cart">
+                <i class="fas fa-shopping-cart"></i> Add
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-badges">
+            <span class="badge sale">Sale 8%</span>
+            <span class="badge new">New</span>
+          </div>
+          <div class="imageContainer">
+            <img
+              src="images/product5.png"
+              alt="Soft Drinks"
+              class="product-image"
+            />
+          </div>
+          <div class="product-info">
+            <p class="category">Soft Drinks</p>
+            <h3 class="product-name">
+              100 Percent Apple Juice - 64 fl oz Bottle
+            </h3>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>4.5</span>
+            </div>
+            <div class="priceAndBtnCart">
+              <div class="price">
+                <span class="current-price">$48.85</span>
+                <span class="old-price">$48.85</span>
+              </div>
+              <button class="add-to-cart">
+                <i class="fas fa-shopping-cart"></i> Add
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- brands Section -->
+    <section class="Brands-Section">
+      <div class="section-header">
+        <h2>Featured Products</h2>
+        <a href="#" class="see-all"
+          ><span class="see-all">See All</span>
+          <i class="fas fa-arrow-right"></i
+        ></a>
+      </div>
+
+      <div class="wrapper">
+        <a href="#" class="item item1"
+          ><img src="images/moltoLogo.png" alt=""
+        /></a>
+        <a href="#" class="item item2"
+          ><img src="images/cocacolaLogo.png" alt=""
+        /></a>
+        <a href="#" class="item item3"
+          ><img src="images/spriteLogo.png" alt=""
+        /></a>
+        <a href="#" class="item item4"
+          ><img src="images/laysLogo.png" alt=""
+        /></a>
+        <a href="#" class="item item5"
+          ><img src="images/cheetosLogo.png" alt=""
+        /></a>
+        <a href="#" class="item item6"
+          ><img src="images/Dewlogo.png" alt=""
+        /></a>
+        <a href="#" class="item item7"
+          ><img src="images/fantaLogo.png" alt=""
+        /></a>
+        <a href="#" class="item item8"
+          ><img src="images/kinderLogo.png" alt=""
+        /></a>
+        <a href="#" class="item item9"
+          ><img src="images/chocoLogo.png" alt=""
+        /></a>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-logo-section">
+          <img src="images/logo.png" alt="Logo" class="footer-logo" />
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type.
+          </p>
+        </div>
+        <div class="footer-links">
+          <ul>
+            <li>My account</li>
+            <li>Log in</li>
+            <li>Wish list</li>
+            <li>My orders</li>
+            <li>Book</li>
+          </ul>
+          <ul>
+            <li>My account</li>
+            <li>Log in</li>
+            <li>Wish list</li>
+            <li>My orders</li>
+            <li>Book</li>
+          </ul>
+          <ul>
+            <li>My account</li>
+            <li>Log in</li>
+            <li>Wish list</li>
+            <li>My orders</li>
+            <li>Book</li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <ul>
+            <li><span>📞</span> +977 564 5555 | +977 564 5555</li>
+            <li><span>✉️</span> Email@domain.com</li>
+            <li><span>🌐</span> www.domain.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-payment">
+        <p>طرق الدفع المتاحة</p>
+        <div class="payment-logos">
+          <img src="images/naqdanLogo.png" alt="Naqdan" />
+          <img src="images/madaLogo.png" alt="Mada" />
+          <img src="images/masterLogo.png" alt="MasterCard" />
+          <img src="images/visaLogo.png" alt="Visa" />
+          <img src="images/gpayLogo.png" alt="Google Pay" />
+          <img src="images/appayLogo.png" alt="Apple Pay" />
+          <img src="images/stcpayLogo.png" alt="STC Pay" />
+          <img src="images/tamara.png" alt="Tamara" />
+          <img src="images/tabbyLogo.png" alt="Tabby" />
+        </div>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
