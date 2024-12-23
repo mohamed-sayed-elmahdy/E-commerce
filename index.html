@@ -57,7 +57,10 @@
           </div>
 
           <div class="search-bar">
-            <input type="text" placeholder="Search for products.." />
+            <div class="input-container">
+              <input type="text" placeholder="Search for products.." id="searchInput" />
+              <div id="suggestions" class="suggestions"></div>
+            </div>
             <button>Search</button>
           </div>
         </div>
@@ -138,7 +141,7 @@
         </div>
         <div class="leftIcons">
           <div class="right-section">
-            <a href="#" class="profile" id="openPopup"
+            <a href="#" class="profile" id="openLogingPopup"
               ><i class="fa-regular fa-user"></i>
               <span class="textIcon"
                 >Login <br />
@@ -331,7 +334,7 @@
                 <span class="current-price">$48.85</span>
                 <span class="old-price">$48.85</span>
               </div>
-              <button class="add-to-cart">
+              <button class="add-to-cart" onclick="addproductTocart('100 Percent Apple Juice - 64 fl oz Bottle')">
                 <i class="fas fa-shopping-cart"></i> Add
               </button>
             </div>
@@ -367,7 +370,7 @@
                 <span class="current-price">$48.85</span>
                 <span class="old-price">$48.85</span>
               </div>
-              <button class="add-to-cart">
+               <button class="add-to-cart" onclick="addproductTocart('100 Percent Apple Juice - 64 fl oz Bottle')">
                 <i class="fas fa-shopping-cart"></i> Add
               </button>
             </div>
@@ -403,7 +406,7 @@
                 <span class="current-price">$48.85</span>
                 <span class="old-price">$48.85</span>
               </div>
-              <button class="add-to-cart">
+               <button class="add-to-cart" onclick="addproductTocart('100 Percent Apple Juice - 64 fl oz Bottle')">
                 <i class="fas fa-shopping-cart"></i> Add
               </button>
             </div>
@@ -439,7 +442,7 @@
                 <span class="current-price">$48.85</span>
                 <span class="old-price">$48.85</span>
               </div>
-              <button class="add-to-cart">
+               <button class="add-to-cart" onclick="addproductTocart('100 Percent Apple Juice - 64 fl oz Bottle')">
                 <i class="fas fa-shopping-cart"></i> Add
               </button>
             </div>
@@ -544,7 +547,7 @@
                 <span class="current-price">$48.85</span>
                 <span class="old-price">$48.85</span>
               </div>
-              <button class="add-to-cart">
+               <button class="add-to-cart" onclick="addproductTocart('100 Percent Apple Juice - 64 fl oz Bottle')">
                 <i class="fas fa-shopping-cart"></i> Add
               </button>
             </div>
@@ -580,7 +583,7 @@
                 <span class="current-price">$48.85</span>
                 <span class="old-price">$48.85</span>
               </div>
-              <button class="add-to-cart">
+               <button class="add-to-cart" onclick="addproductTocart('100 Percent Apple Juice - 64 fl oz Bottle')">
                 <i class="fas fa-shopping-cart"></i> Add
               </button>
             </div>
@@ -616,7 +619,7 @@
                 <span class="current-price">$48.85</span>
                 <span class="old-price">$48.85</span>
               </div>
-              <button class="add-to-cart">
+               <button class="add-to-cart" onclick="addproductTocart('100 Percent Apple Juice - 64 fl oz Bottle')">
                 <i class="fas fa-shopping-cart"></i> Add
               </button>
             </div>
@@ -652,7 +655,7 @@
                 <span class="current-price">$48.85</span>
                 <span class="old-price">$48.85</span>
               </div>
-              <button class="add-to-cart">
+               <button class="add-to-cart" onclick="addproductTocart('100 Percent Apple Juice - 64 fl oz Bottle')">
                 <i class="fas fa-shopping-cart"></i> Add
               </button>
             </div>
@@ -689,7 +692,7 @@
                 <span class="current-price">$48.85</span>
                 <span class="old-price">$48.85</span>
               </div>
-              <button class="add-to-cart">
+               <button class="add-to-cart" onclick="addproductTocart('100 Percent Apple Juice - 64 fl oz Bottle')">
                 <i class="fas fa-shopping-cart"></i> Add
               </button>
             </div>
@@ -725,7 +728,7 @@
                 <span class="current-price">$48.85</span>
                 <span class="old-price">$48.85</span>
               </div>
-              <button class="add-to-cart">
+               <button class="add-to-cart" onclick="addproductTocart('100 Percent Apple Juice - 64 fl oz Bottle')">
                 <i class="fas fa-shopping-cart"></i> Add
               </button>
             </div>
@@ -761,7 +764,7 @@
                 <span class="current-price">$48.85</span>
                 <span class="old-price">$48.85</span>
               </div>
-              <button class="add-to-cart">
+               <button class="add-to-cart" onclick="addproductTocart('100 Percent Apple Juice - 64 fl oz Bottle')">
                 <i class="fas fa-shopping-cart"></i> Add
               </button>
             </div>
@@ -797,7 +800,7 @@
                 <span class="current-price">$48.85</span>
                 <span class="old-price">$48.85</span>
               </div>
-              <button class="add-to-cart">
+               <button class="add-to-cart" onclick="addproductTocart('100 Percent Apple Juice - 64 fl oz Bottle')">
                 <i class="fas fa-shopping-cart"></i> Add
               </button>
             </div>
@@ -931,8 +934,8 @@
       </div>
     </footer>
 
-    <!-- popup -->
-    <div id="loginpopup" class="Loginpopup">
+    <!-- popup Loginpopup -->
+     <div id="loginpopup" class="Loginpopup">
       <div class="popup-content">
         <span id="closePopup" class="close">
           <i class="fas fa-times"></i>
@@ -954,8 +957,28 @@
           <button type="submit" class="login-btn">Login</button>
         </form>
       </div>
-    </div>
+    </div> 
 
+   <!-- popup cartPop -->
+   <div id="PurchasePopup" class="PurchasePopup">
+    <div class="popup-content">
+        <span id="closePurchasePopup" class="close">
+          <i class="fas fa-times"></i>
+        </span>
+        <h2 class="Purchase-popup-title">Complete Your Purchase</h2>
+<p>  <span>You have added <span class="messageCart"> </span> to the shopping cart</span><i class="fas fa-shopping-cart"></i>  </p></p>
+   
+        <div class="cartButtons">
+          <button>
+            Continue Shopping
+          </button>
+          <button>
+            Complete Payment
+          </button>
+        </div>
+      </div>
+      
+  </div> 
     <script src="main.js"></script>
   </body>
 </html>

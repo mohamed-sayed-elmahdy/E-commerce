@@ -100,6 +100,13 @@ function UpdateContent(lang) {
   ];
   navLinks.forEach((link, index) => (link.textContent = navIcons[index]));
 
+  document.querySelectorAll(".thirdNav .nav__list .nav__link span")[0].textContent = content.products
+  document.querySelectorAll(".thirdNav .nav__list .nav__link span")[1].textContent = content.whatsNew
+  document.querySelectorAll(".thirdNav .nav__list .nav__link span")[2].textContent = content.delivery
+  document.querySelectorAll(".thirdNav .nav__list .nav__link span")[3].textContent = content.dealsOffers
+  document.querySelectorAll(".thirdNav .nav__list .nav__link span")[4].textContent = content.blog
+  document.querySelectorAll(".thirdNav .nav__list .nav__link span")[5].textContent = content.contact
+
   document.querySelector(".totalPrice .textIcon").textContent =
     content.yourCart;
 
@@ -125,6 +132,8 @@ const languageToggle = document.getElementById("languageToggle");
 // Fix Border-radius
 const input = document.querySelector('.navbar .search-bar input[type="text"]');
 const button = document.querySelector(".navbar .search-bar button");
+// Select all nav__link elements
+const navLinks = document.querySelectorAll('.nav__link'); 
 
 languageToggle.addEventListener("click", () => {
   if (languageToggle.textContent === "عربي") {
@@ -133,12 +142,44 @@ languageToggle.addEventListener("click", () => {
     languageToggle.textContent = "English";
     input.style.borderRadius = "0 8px 8px 0";
     button.style.borderRadius = "5px 0 0 5px";
+
+    navLinks.forEach(link => {
+        link.addEventListener('mouseenter', () => {
+          const span = link.querySelector('span');
+          if (span) {
+            span.style.marginRight = '2.5rem';
+          }
+        });
+      
+        link.addEventListener('mouseleave', () => {
+          const span = link.querySelector('span');
+          if (span) {
+            span.style.marginRight = '0';
+          }
+        });
+      });
   } else {
     UpdateContent("english");
     document.body.style.direction = "ltr";
     languageToggle.textContent = "عربي";
     input.style.borderRadius = "8px 0 0 8px";
     button.style.borderRadius = "0 5px 5px 0";
+
+    navLinks.forEach(link => {
+        link.addEventListener('mouseenter', () => {
+          const span = link.querySelector('span');
+          if (span) {
+            span.style.marginLeft = '2.5rem';
+          }
+        });
+      
+        link.addEventListener('mouseleave', () => {
+          const span = link.querySelector('span');
+          if (span) {
+            span.style.marginLeft = '0';
+          }
+        });
+      });
   }
 });
 
@@ -262,7 +303,7 @@ window.onresize = function (event) {
 
 // Login popup
 const popup = document.getElementById("loginpopup");
-const openPopup = document.getElementById("openPopup");
+const openPopup = document.getElementById("openLogingPopup");
 const closePopup = document.getElementById("closePopup");
 
 openPopup.addEventListener("click", (e) => {
@@ -279,3 +320,76 @@ window.addEventListener("click", (event) => {
     popup.classList.remove("show");
   }
 });
+
+// Purchase popuup
+const PurchasePopup = document.getElementById("PurchasePopup");
+const openPurchasePopup = document.getElementById("openPurchasePopup");
+const closePurchasePopup = document.getElementById("closePurchasePopup");
+
+function addproductTocart(id) {
+  PurchasePopup.classList.add("show");
+  PurchasePopup.querySelector(".messageCart").textContent = id;
+}
+
+closePurchasePopup.addEventListener("click", () => {
+  PurchasePopup.classList.remove("show");
+});
+
+window.addEventListener("click", (event) => {
+  if (event.target === PurchasePopup) {
+    PurchasePopup.classList.remove("show");
+  }
+});
+
+
+
+// display the suggestions
+const searchInput = document.getElementById("searchInput");
+const suggestionsBox = document.getElementById("suggestions");
+
+const products = [
+    "Apple",
+    "Banana",
+    "Orange",
+    "Mango",
+    "Pineapple",
+    "Grapes",
+    "Watermelon",
+    "Strawberry",
+    "Blueberry",
+    "Raspberry",
+  ];
+
+
+  // Handle input
+searchInput.addEventListener("input", () => {
+    const query = searchInput.value.toLowerCase();
+    suggestionsBox.innerHTML = ""; // Clear previous suggestions
+  
+    if (query) {
+      const filteredProducts = products.filter(product =>
+        product.toLowerCase().includes(query)
+      );
+  
+      filteredProducts.forEach(product => {
+        const suggestionItem = document.createElement("div");
+        suggestionItem.textContent = product;
+        suggestionItem.addEventListener("click", () => {
+          searchInput.value = product; // Set input value
+          suggestionsBox.classList.remove("active"); // Hide suggestions
+        });
+        suggestionsBox.appendChild(suggestionItem);
+      });
+  
+      suggestionsBox.classList.add("active"); // Show suggestions
+    } else {
+      suggestionsBox.classList.remove("active"); // Hide suggestions
+    }
+  });
+  
+  // Hide suggestions when clicking outside
+  document.addEventListener("click", (event) => {
+    if (!searchInput.contains(event.target) && !suggestionsBox.contains(event.target)) {
+      suggestionsBox.classList.remove("active");
+    }
+  });

@@ -205,38 +205,78 @@ header .toggle-btn:hover {
 }
 
 .navbar .search-bar {
-  display: flex;
-  align-items: center;
-  margin-left: 5px;
-  flex: 1;
-}
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+    flex: 1;
+    position: relative; /* Ensure relative positioning for input-container */
+  }
+  
+  .search-bar .input-container {
+    position: relative;
+    flex: 1;
+  }
+  
+  .search-bar input[type="text"] {
+    padding: 12px 8px;
+    border: 1px solid #ddd;
+    border-radius: 8px 0 0 8px;
+    outline: none;
+    flex: 1;
+    font-size: 18px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .search-bar input[type="text"]:focus {
+    border-color: #ffc107;
+  }
+  
+  .search-bar button {
+    padding: 13px 38px;
+    background-color: #ffc107;
+    border: 1px solid transparent;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.3s all;
+  }
+  
+  .search-bar button:hover {
+    background-color: white;
+    border-color: #ffc107;
+  }
+  
+  .search-bar .suggestions {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-height: 200px;
+    overflow-y: auto;
+    width: 100%; /* Matches the width of the input */
+    top: 100%; /* Align suggestions directly below the input */
+    left: 0;
+    display: none; /* Hidden by default */
+    z-index: 1000;
+  }
+  
+  .search-bar .suggestions.active {
+    display: block; /* Show when active */
+  }
+  
+  .search-bar .suggestions div {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .search-bar .suggestions div:hover {
+    background-color: #f8f9fa;
+  }
 
-.search-bar input[type="text"] {
-  padding: 12px 8px;
-  border: 1px solid #ddd;
-  border-radius: 8px 0 0 8px;
-  outline: none;
-  flex: 1;
-  font-size: 18px;
-  width: 50px;
-}
-.search-bar input[type="text"]:focus {
-  border-color: #ffc107;
-}
-.search-bar button {
-  padding: 13px 38px;
-  background-color: #ffc107;
-  border: 1px solid transparent;
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 16px;
-  transition: 0.3s all;
-}
-.search-bar button:hover {
-  background-color: white;
-  border-color: #ffc107;
-}
+  
 .navbar .leftIcons i {
   position: relative;
   font-size: 25px;
@@ -633,7 +673,6 @@ header .toggle-btn:hover {
   width: 1380px;
   max-width: 100vw;
   height: 100%;
-  object-fit: cover;
 }
 .slider .list video {
   margin: 0 auto;
@@ -831,7 +870,7 @@ header .toggle-btn:hover {
   transition: 0.3s all ease;
 }
 .slider .buttons button:hover {
-    background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.8);
 }
 .slider .dots {
   position: absolute;
@@ -1606,24 +1645,24 @@ header .toggle-btn:hover {
   margin-inline-start: 2rem;
 }
 
-.content h1 {
+.download-section .content h1 {
   font-size: 4rem;
   font-weight: bold;
   color: #333;
 }
 
-.content .highlight {
+.download-section .content .highlight {
   color: #c3915b;
 }
 
-.content p {
+.download-section .content p {
   margin-top: 10px;
   font-size: 1.2rem;
   color: #000000;
   font-weight: 700;
 }
 
-.buttons {
+.download-section .buttons {
   display: flex;
   justify-content: flex-start;
   gap: 16px;
@@ -1631,12 +1670,12 @@ header .toggle-btn:hover {
   flex-wrap: wrap;
 }
 
-.buttons a img {
+.download-section .buttons a img {
   width: 140px;
   height: auto;
 }
 
-.cyclebg {
+.download-section .cyclebg {
   width: 360px;
   height: 360px;
   background: #b48340;
@@ -1648,7 +1687,7 @@ header .toggle-btn:hover {
   align-items: center;
   justify-content: center;
 }
-.phone-image {
+.download-section .phone-image {
   flex: 1;
   display: flex;
   justify-content: center;
@@ -1656,7 +1695,7 @@ header .toggle-btn:hover {
   position: absolute;
 }
 
-.phone-image img {
+.download-section .phone-image img {
   width: 100%;
   max-width: 240px;
   height: auto;
@@ -1675,14 +1714,14 @@ header .toggle-btn:hover {
     margin-bottom: 20px;
     margin-inline-start: 0;
   }
-  .cyclebg {
+  .download-section .cyclebg {
     width: 300px;
     height: 300px;
     margin-inline-end: 0rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
-  .buttons {
+  .download-section .buttons {
     align-items: center;
     justify-content: center;
   }
@@ -1696,7 +1735,7 @@ header .toggle-btn:hover {
     min-height: fit-content;
     position: relative;
   }
-  .phone-image {
+  .download-section .phone-image {
     flex: 1;
     display: flex;
     justify-content: center;
@@ -1705,8 +1744,14 @@ header .toggle-btn:hover {
     right: initial;
   }
 
-  .phone-image img {
+  .download-section .phone-image img {
     max-width: 180px;
+  }
+}
+
+@media (max-width: 550px) {
+  .download-section .content h1 {
+    font-size: 1.7rem;
   }
 }
 
@@ -1883,8 +1928,8 @@ header .toggle-btn:hover {
   transition: 0.3s all ease;
 }
 .Loginpopup .close:hover {
-    border-color: #ffc107;
-    color: #ffc107;
+  border-color: #ffc107;
+  color: #ffc107;
 }
 .Loginpopup .input-field {
   width: 100%;
@@ -1916,4 +1961,141 @@ header .toggle-btn:hover {
   background-color: white;
   border: 1px solid #ffc107;
   color: #ffc107;
+}
+
+/* Purchase popuup */
+
+.PurchasePopup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.6s ease;
+  display: flex;
+  z-index: 2000;
+}
+
+.PurchasePopup.show {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+}
+.PurchasePopup .Purchase-popup-title {
+  font-size: 27px;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+.PurchasePopup .popup-content {
+  background: white;
+  padding: 40px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(0.9);
+  animation: popupOpen 0.45s forwards;
+}
+
+@keyframes popupOpen {
+  to {
+    transform: scale(1);
+  }
+}
+.PurchasePopup p {
+  font-size: 13px;
+  line-height: 1.5rem;
+  text-align: center;
+  max-width: 300px;
+  margin: 0 auto;
+  font-weight: 600;
+}
+.PurchasePopup .messageCart {
+  color: #ff8c00;
+  font-weight: 700;
+  font-size: 14px;
+}
+.PurchasePopup p i {
+  color: #ffc107;
+  margin-inline-start: 5px;
+  font-size: 14px;
+}
+.PurchasePopup .close {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  border: 1px solid black;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s all ease;
+}
+.PurchasePopup .close:hover {
+  border-color: #ffc107;
+  color: #ffc107;
+}
+
+.PurchasePopup .cartButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 1.2rem;
+}
+.PurchasePopup button {
+  padding: 10px 10px;
+  background-color: #ffc107;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  transition: 0.3s all;
+}
+
+.PurchasePopup button:hover {
+  background-color: white;
+  border: 1px solid #ffc107;
+  color: #ffc107;
+}
+
+@media (max-width: 525px) {
+  .PurchasePopup .popup-content {
+    padding: 20px 10px;
+    margin: 0 10px;
+  }
+  .PurchasePopup .Purchase-popup-title {
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+  .PurchasePopup button {
+    font-size: 12px;
+  }
+  .PurchasePopup .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 13px;
+    cursor: pointer;
+    border: 1px solid black;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s all ease;
+  }
 }
