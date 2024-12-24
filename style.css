@@ -186,12 +186,13 @@ header .toggle-btn:hover {
   top: 100%;
   left: 0;
   background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  border: 1px solid #ffc107;
+  border-radius: 10px;
   width: 160px;
   z-index: 10;
   color: black;
   font-weight: 500;
+  overflow: hidden;
 }
 
 .navbar .custom-menu .menu-options li {
@@ -205,78 +206,77 @@ header .toggle-btn:hover {
 }
 
 .navbar .search-bar {
-    display: flex;
-    align-items: center;
-    margin-left: 5px;
-    flex: 1;
-    position: relative; /* Ensure relative positioning for input-container */
-  }
-  
-  .search-bar .input-container {
-    position: relative;
-    flex: 1;
-  }
-  
-  .search-bar input[type="text"] {
-    padding: 12px 8px;
-    border: 1px solid #ddd;
-    border-radius: 8px 0 0 8px;
-    outline: none;
-    flex: 1;
-    font-size: 18px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  .search-bar input[type="text"]:focus {
-    border-color: #ffc107;
-  }
-  
-  .search-bar button {
-    padding: 13px 38px;
-    background-color: #ffc107;
-    border: 1px solid transparent;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 16px;
-    transition: 0.3s all;
-  }
-  
-  .search-bar button:hover {
-    background-color: white;
-    border-color: #ffc107;
-  }
-  
-  .search-bar .suggestions {
-    position: absolute;
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 0 0 8px 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-height: 200px;
-    overflow-y: auto;
-    width: 100%; /* Matches the width of the input */
-    top: 100%; /* Align suggestions directly below the input */
-    left: 0;
-    display: none; /* Hidden by default */
-    z-index: 1000;
-  }
-  
-  .search-bar .suggestions.active {
-    display: block; /* Show when active */
-  }
-  
-  .search-bar .suggestions div {
-    padding: 10px;
-    cursor: pointer;
-  }
-  
-  .search-bar .suggestions div:hover {
-    background-color: #f8f9fa;
-  }
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+  flex: 1;
+  position: relative; /* Ensure relative positioning for input-container */
+}
 
-  
+.search-bar .input-container {
+  position: relative;
+  flex: 1;
+}
+
+.search-bar input[type="text"] {
+  padding: 12px 8px;
+  border: 1px solid #ddd;
+  border-radius: 8px 0 0 8px;
+  outline: none;
+  flex: 1;
+  font-size: 18px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.search-bar input[type="text"]:focus {
+  border-color: #ffc107;
+}
+
+.search-bar button {
+  padding: 13px 38px;
+  background-color: #ffc107;
+  border: 1px solid transparent;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: 0.3s all;
+}
+
+.search-bar button:hover {
+  background-color: white;
+  border-color: #ffc107;
+}
+
+.search-bar .suggestions {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-height: 200px;
+  overflow-y: auto;
+  width: 100%; /* Matches the width of the input */
+  top: 100%; /* Align suggestions directly below the input */
+  left: 0;
+  display: none; /* Hidden by default */
+  z-index: 1000;
+}
+
+.search-bar .suggestions.active {
+  display: block; /* Show when active */
+}
+
+.search-bar .suggestions div {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.search-bar .suggestions div:hover {
+  background-color: #f8f9fa;
+}
+
 .navbar .leftIcons i {
   position: relative;
   font-size: 25px;
@@ -369,9 +369,8 @@ header .toggle-btn:hover {
 
 .nav__link {
   position: relative;
-  color: var(--white-color);
-  font-size: var(--h1-font-size);
-  font-weight: var(--font-medium);
+  color: black;
+
   display: inline-flex;
   align-items: center;
   transition: opacity 0.4s;
@@ -426,7 +425,85 @@ header .toggle-btn:hover {
   top: 1rem;
   right: 1.5rem;
 }
+.navbar #productsLink i.drop {
+  position: static;
+  opacity: 1;
+  visibility: visible;
+  font-size: 15px;
+  margin-top: 3px;
+  margin-inline-start: 5px;
+}
+.navbar #productsLink span {
+  margin: 0 !important;
+}
+.navbar .nav__list .nav__item.dropdown .dropdown__menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.5s ease, max-height 0.5s ease, visibility 0.5s ease;
+}
 
+.navbar .nav__list .nav__item.dropdown .dropdown__menu.show {
+  opacity: 1;
+  visibility: visible;
+  max-height: 200px;
+}
+.navbar .nav__list .nav__item.dropdown .dropdown__menu li {
+  padding: 10px 15px;
+}
+.navbar .nav__list .nav__item.dropdown .dropdown__menu li a {
+  text-decoration: none;
+  color: white;
+  text-transform: capitalize;
+}
+
+.navbar .nav__list .nav__item.dropdown .dropdown__menu li a:hover {
+  background-color: #f0f0f0;
+}
+
+.navbar .nav__menu .icons-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+.navbar .nav__menu .icons-section a {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  color: white;
+}
+.navbar .nav__menu .icons-section a i {
+  position: relative;
+}
+.navbar .nav__menu .icons-section a .badge {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: -10px;
+  right: -10px;
+  background: #ffc107;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 9px;
+}
+.navbar .nav__menu .icons-section a  .totalPrice {
+  display: flex;
+  justify-content: flex-start;
+ align-items: flex-start;
+ gap: 5px;
+ flex-direction: column;
+}
+.navbar .nav__menu .icons-section a  .totalPrice .price {
+  font-weight: 700;
+}
 .-link {
   color: var(--white-color);
   font-size: 1.5rem;
@@ -587,6 +664,9 @@ header .toggle-btn:hover {
   .nav .nav__toggle {
     margin-inline-start: 12px;
   }
+  .nav__link {
+    color: white;
+  }
 }
 @media screen and (max-width: 530px) {
   .navbar .leftIcons .right-section {
@@ -630,13 +710,117 @@ header .toggle-btn:hover {
 .thirdNav .thirdNavContainer .nav__menu .nav__link {
   font-weight: 600;
 }
+.thirdNav .thirdNavContainer .dropdownMenuContainer {
+  position: relative;
+  cursor: pointer;
+  display: block;
+}
+.thirdNav .thirdNavContainer .dropdownMenuContainer .dropdownMenu {
+  position: absolute;
+  top: 18px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 10;
+  background: white;
+  border-radius: 10px 10px 10px 10px;
+  width: 150px;
+  display: none;
+  border: 1px solid #ffc107;
+}
+
+.thirdNav .thirdNavContainer .dropdownMenuContainer .dropdownMenu a {
+  color: #000;
+}
+.thirdNav .thirdNavContainer .nav__link.dropdownMenuContainer:hover span {
+  margin: 0 !important;
+}
+.thirdNav .thirdNavContainer .nav__link.dropdownMenuContainer i {
+  opacity: 1;
+  visibility: visible;
+  font-size: 16px;
+  margin-top: 2px;
+  margin-inline-start: 5px;
+}
+.thirdNav .thirdNavContainer .dropdownMenuContainer:hover .dropdownMenu {
+  display: flex;
+}
+.thirdNav
+  .thirdNavContainer
+  .dropdownMenuContainer
+  .dropdownMenu
+  .dropdownMenuItem {
+  width: 100%;
+  padding: 8px 10px 8px 20px;
+  cursor: pointer;
+  border-radius: 10px 10px 10px 10px;
+}
+.thirdNav
+  .thirdNavContainer
+  .dropdownMenuContainer
+  .dropdownMenu
+  .dropdownMenuItem.subdropdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.thirdNav
+  .thirdNavContainer
+  .dropdownMenuContainer
+  .dropdownMenu
+  .dropdownMenuItem.subdropdown
+  .subdropdownmenu {
+  position: absolute;
+  top: 0;
+  display: none;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 10;
+  background: white;
+  border-radius: 10px 10px 10px 10px;
+  width: 150px;
+  display: none;
+  overflow: hidden;
+  border: 1px solid #ffc107;
+  left: 100%;
+}
+
+.thirdNav
+  .thirdNavContainer
+  .dropdownMenuContainer
+  .dropdownMenu
+  .dropdownMenuItem.subdropdown:hover
+  .subdropdownmenu {
+  display: flex;
+}
+.thirdNav
+  .thirdNavContainer
+  .dropdownMenuContainer
+  .dropdownMenu
+  .dropdownMenuItem.subdropdown
+  i {
+  position: static;
+  margin-inline-end: 5px;
+  font-size: 16px;
+}
+.thirdNav
+  .thirdNavContainer
+  .dropdownMenuContainer:hover
+  .dropdownMenu
+  .dropdownMenuItem:hover {
+  background: linear-gradient(180deg, #ba8943 0%, #381609b9 100%);
+}
 .thirdNav .thirdNavContainer .nav__menu .nav__link i {
   color: #ff8c00;
 }
 
 @media screen and (max-width: 1090px) {
   .thirdNav .thirdNavContainer .nav__menu .nav__list {
-    column-gap: 1.5rem;
+    column-gap: 2.5rem;
   }
 }
 @media screen and (max-width: 768px) {
@@ -647,6 +831,12 @@ header .toggle-btn:hover {
     display: none;
   }
 }
+
+
+
+
+
+
 
 /* Slider */
 

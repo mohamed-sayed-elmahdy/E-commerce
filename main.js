@@ -46,6 +46,49 @@ const headerAndNavbarsContent = {
   },
 };
 
+
+// Footer Content 
+const footerContent = {
+  english: {
+    logo: {
+      alt: "Logo",
+      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type."
+    },
+    links1: ["My account", "Log in", "Wish list", "My orders", "Book"],
+    links2: ["My account", "Log in", "Wish list", "My orders", "Book"],
+    links3: ["My account", "Log in", "Wish list", "My orders", "Book"],
+    contact: {
+      phone: "+977 564 5555 | +977 564 5555",
+      email: "Email@domain.com",
+      website: "www.domain.com"
+    },
+    paymentMethods: {
+      text: "Available payment methods",
+    }
+  },
+  arabic: {
+    logo: {
+      alt: "شعار",
+      text: "لوريم إيبسوم هو نص وهمي في صناعة الطباعة والتنضيد. لقد كان لوريم إيبسوم النص الوهمي القياسي في الصناعة منذ الخمسينيات من القرن الخامس عشر، عندما أخذ طابع غير معروف مجموعة من الحروف وخلطها لإنشاء نوع."
+    },
+    links1: ["حسابي", "تسجيل الدخول", "قائمة الرغبات", "طلباتي", "احجز"],
+    links2: ["حسابي", "تسجيل الدخول", "قائمة الرغبات", "طلباتي", "احجز"],
+    links3: ["حسابي", "تسجيل الدخول", "قائمة الرغبات", "طلباتي", "احجز"],
+    contact: {
+      phone: "+977 564 5555 | +977 564 5555",
+      email: "Email@domain.com",
+      website: "www.domain.com"
+    },
+    paymentMethods: {
+      text: "طرق الدفع المتاحة",
+    }
+  }
+};
+
+
+
+
+
 // Update Content language
 function UpdateContent(lang) {
   const content = headerAndNavbarsContent[lang];
@@ -100,12 +143,24 @@ function UpdateContent(lang) {
   ];
   navLinks.forEach((link, index) => (link.textContent = navIcons[index]));
 
-  document.querySelectorAll(".thirdNav .nav__list .nav__link span")[0].textContent = content.products
-  document.querySelectorAll(".thirdNav .nav__list .nav__link span")[1].textContent = content.whatsNew
-  document.querySelectorAll(".thirdNav .nav__list .nav__link span")[2].textContent = content.delivery
-  document.querySelectorAll(".thirdNav .nav__list .nav__link span")[3].textContent = content.dealsOffers
-  document.querySelectorAll(".thirdNav .nav__list .nav__link span")[4].textContent = content.blog
-  document.querySelectorAll(".thirdNav .nav__list .nav__link span")[5].textContent = content.contact
+  document.querySelectorAll(
+    ".thirdNav .nav__list .nav__link span"
+  )[0].textContent = content.products;
+  document.querySelectorAll(
+    ".thirdNav .nav__list .nav__link span"
+  )[1].textContent = content.whatsNew;
+  document.querySelectorAll(
+    ".thirdNav .nav__list .nav__link span"
+  )[2].textContent = content.delivery;
+  document.querySelectorAll(
+    ".thirdNav .nav__list .nav__link span"
+  )[3].textContent = content.dealsOffers;
+  document.querySelectorAll(
+    ".thirdNav .nav__list .nav__link span"
+  )[4].textContent = content.blog;
+  document.querySelectorAll(
+    ".thirdNav .nav__list .nav__link span"
+  )[5].textContent = content.contact;
 
   document.querySelector(".totalPrice .textIcon").textContent =
     content.yourCart;
@@ -123,8 +178,66 @@ function UpdateContent(lang) {
 
   document.querySelector(".navbar .right-section a #Wishlist").textContent =
     content.wishlist;
+    document.querySelector(".navbar .right-section a .textIcon.cartText").textContent = content.yourCart;
+    document.querySelector(".navbar  a #mobileWishlist").textContent =
+    content.wishlist;
+// End Navbar and Header
 
-  //
+// Footer 
+
+// Validate the provided language and retrieve content
+const FooterContent = footerContent[lang];
+if (!FooterContent) {
+  console.error(`Language "${lang}" not found in footerContent.`);
+  return;
+}
+
+// Update the logo section
+const logoText = document.querySelector(".footer-logo-section p");
+const logoImg = document.querySelector(".footer-logo-section img");
+if (logoText) logoText.textContent = FooterContent.logo.text;
+if (logoImg) logoImg.alt = FooterContent.logo.alt;
+
+// Update links in all columns
+const linkColumns = document.querySelectorAll(".footer-links ul");
+if (linkColumns.length >= 3) {
+  FooterContent.links1.forEach((text, index) => {
+    if (linkColumns[0].children[index]) {
+      linkColumns[0].children[index].querySelector("a").textContent = text;
+    }
+  });
+
+  FooterContent.links2.forEach((text, index) => {
+    if (linkColumns[1].children[index]) {
+      linkColumns[1].children[index].querySelector("a").textContent = text;
+    }
+  });
+
+  FooterContent.links3.forEach((text, index) => {
+    if (linkColumns[2].children[index]) {
+      linkColumns[2].children[index].querySelector("a").textContent = text;
+    }
+  });
+}
+
+// Update contact information
+const contactItems = document.querySelectorAll(".footer-contact ul li");
+if (contactItems.length >= 3) {
+  const [phone, email, website] = contactItems;
+  phone.querySelector("span").textContent = FooterContent.contact.phone;
+  email.querySelector("span").textContent = FooterContent.contact.email;
+  website.querySelector("span").textContent = FooterContent.contact.website;
+}
+
+// Update payment methods text
+const paymentText = document.querySelector(".footer-payment p");
+if (paymentText) paymentText.textContent = FooterContent.paymentMethods.text;
+
+// End Footer 
+
+
+
+
 }
 
 // Toggle Button Logic for Language
@@ -133,7 +246,7 @@ const languageToggle = document.getElementById("languageToggle");
 const input = document.querySelector('.navbar .search-bar input[type="text"]');
 const button = document.querySelector(".navbar .search-bar button");
 // Select all nav__link elements
-const navLinks = document.querySelectorAll('.nav__link'); 
+const navLinks = document.querySelectorAll(".nav__link");
 
 languageToggle.addEventListener("click", () => {
   if (languageToggle.textContent === "عربي") {
@@ -142,66 +255,120 @@ languageToggle.addEventListener("click", () => {
     languageToggle.textContent = "English";
     input.style.borderRadius = "0 8px 8px 0";
     button.style.borderRadius = "5px 0 0 5px";
+    document.querySelector(
+      ".thirdNav .thirdNavContainer .dropdownMenuContainer .dropdownMenu .dropdownMenuItem.subdropdown .subdropdownmenu"
+    ).style.right = "100%";
 
-    navLinks.forEach(link => {
-        link.addEventListener('mouseenter', () => {
-          const span = link.querySelector('span');
-          if (span) {
-            span.style.marginRight = '2.5rem';
-          }
-        });
-      
-        link.addEventListener('mouseleave', () => {
-          const span = link.querySelector('span');
-          if (span) {
-            span.style.marginRight = '0';
-          }
-        });
+    document.querySelector(
+      ".thirdNav .thirdNavContainer .dropdownMenuContainer .dropdownMenu .dropdownMenuItem.subdropdown i"
+    ).style.transform = "rotate(180deg)";
+
+    navLinks.forEach((link) => {
+      link.addEventListener("mouseenter", () => {
+        const span = link.querySelector("span");
+        if (span) {
+          span.style.marginRight = "2.5rem";
+        }
       });
+
+      link.addEventListener("mouseleave", () => {
+        const span = link.querySelector("span");
+        if (span) {
+          span.style.marginRight = "0";
+        }
+      });
+    });
   } else {
     UpdateContent("english");
     document.body.style.direction = "ltr";
     languageToggle.textContent = "عربي";
     input.style.borderRadius = "8px 0 0 8px";
     button.style.borderRadius = "0 5px 5px 0";
+    document.querySelector(
+      ".thirdNav .thirdNavContainer .dropdownMenuContainer .dropdownMenu .dropdownMenuItem.subdropdown .subdropdownmenu"
+    ).style.left = "100%";
+    document.querySelector(
+      ".thirdNav .thirdNavContainer .dropdownMenuContainer .dropdownMenu .dropdownMenuItem.subdropdown i"
+    ).style.transform = "rotate(0deg)";
 
-    navLinks.forEach(link => {
-        link.addEventListener('mouseenter', () => {
-          const span = link.querySelector('span');
-          if (span) {
-            span.style.marginLeft = '2.5rem';
-          }
-        });
-      
-        link.addEventListener('mouseleave', () => {
-          const span = link.querySelector('span');
-          if (span) {
-            span.style.marginLeft = '0';
-          }
-        });
+    navLinks.forEach((link) => {
+      link.addEventListener("mouseenter", () => {
+        const span = link.querySelector("span");
+        if (span) {
+          span.style.marginLeft = "2.5rem";
+        }
       });
+
+      link.addEventListener("mouseleave", () => {
+        const span = link.querySelector("span");
+        if (span) {
+          span.style.marginLeft = "0";
+        }
+      });
+    });
   }
 });
+
+
+
+
+
+
+
+
+
+// prices object
+const prices = {
+  product1: { USD: 48.85, JOD: 34.65 },
+  product2: { USD: 48.85, JOD: 34.65 },
+  product3: { USD: 48.85, JOD: 34.65 },
+  product4: { USD: 48.85, JOD: 34.65 },
+  product5: { USD: 48.85, JOD: 34.65 },
+  product6: { USD: 48.85, JOD: 34.65 },
+  product7: { USD: 48.85, JOD: 34.65 },
+  product8: { USD: 48.85, JOD: 34.65 },
+  product9: { USD: 48.85, JOD: 34.65 },
+  product10: { USD: 48.85, JOD: 34.65 },
+  product11: { USD: 48.85, JOD: 34.65 },
+  product12: { USD: 48.85, JOD: 34.65 },
+};
 
 // Toggle Button Logic for Currency
 const currencyToggle = document.getElementById("currencyToggle");
 currencyToggle.addEventListener("click", () => {
-  if (currencyToggle.textContent === "USD") {
-    currencyToggle.textContent = "JOD";
-    console.log("Currency toggled to JOD");
+  if (currencyToggle.textContent === "JOD") {
     updatePrices("JOD"); // Update prices to JOD
-  } else {
     currencyToggle.textContent = "USD";
-    console.log("Currency toggled to USD");
+    console.log("Currency toggled to JOD");
+  } else {
+    currencyToggle.textContent = "JOD";
     updatePrices("USD"); // Update prices to USD
+    console.log("Currency toggled to USD");
   }
 });
 
-// Example Function to Update Prices
+// Function to Update Prices
 function updatePrices(currency) {
-  console.log(`Updating prices to ${currency}...`);
-  // Add logic to fetch or update displayed prices
+  // Update the prices for each product
+  Object.keys(prices).forEach((product, index) => {
+    const currentPriceEl = document.querySelector(
+      `.product${index + 1}CurrentPrice`
+    );
+    const oldPriceEl = document.querySelector(`.product${index + 1}OldPrice`);
+    if (currentPriceEl && oldPriceEl) {
+      currentPriceEl.textContent = `${currency === "USD" ? "$" : "JD"} ${prices[
+        product
+      ][currency].toFixed(2)}`;
+      oldPriceEl.textContent = `${currency === "USD" ? "$" : "JD"} ${(
+        prices[product][currency] * 1.1
+      ).toFixed(2)}`; // Example for old price
+    }
+  });
 }
+
+
+
+
 
 /* Show Menu */
 const navMenu = document.getElementById("nav-menu"),
@@ -253,7 +420,6 @@ menus.forEach((menu, index) => {
       }
     }
   });
-
   // Close menu on outside click
   document.addEventListener("click", (e) => {
     if (!menu.contains(e.target)) {
@@ -261,6 +427,11 @@ menus.forEach((menu, index) => {
     }
   });
 });
+
+
+
+
+
 
 // Slider
 let slider = document.querySelector(".slider .list");
@@ -300,6 +471,30 @@ dots.forEach((li, key) => {
 window.onresize = function (event) {
   reloadSlider();
 };
+
+// mobiledropdown
+
+const productsLink = document.querySelector(
+  ".navbar .nav__list .nav__item.dropdown"
+);
+const productsDropdown = document.querySelector(
+  ".navbar .nav__list .nav__item.dropdown .dropdown__menu"
+);
+
+productsLink.addEventListener("click", (e) => {
+  e.preventDefault();
+  productsDropdown.classList.toggle("show");
+});
+
+// Close dropdown when clicking outside
+document.addEventListener("click", (e) => {
+  if (
+    !productsLink.contains(e.target) &&
+    !productsDropdown.contains(e.target)
+  ) {
+    productsDropdown.classList.remove("show");
+  }
+});
 
 // Login popup
 const popup = document.getElementById("loginpopup");
@@ -341,55 +536,55 @@ window.addEventListener("click", (event) => {
   }
 });
 
-
-
 // display the suggestions
 const searchInput = document.getElementById("searchInput");
 const suggestionsBox = document.getElementById("suggestions");
 
 const products = [
-    "Apple",
-    "Banana",
-    "Orange",
-    "Mango",
-    "Pineapple",
-    "Grapes",
-    "Watermelon",
-    "Strawberry",
-    "Blueberry",
-    "Raspberry",
-  ];
+  "Apple",
+  "Banana",
+  "Orange",
+  "Mango",
+  "Pineapple",
+  "Grapes",
+  "Watermelon",
+  "Strawberry",
+  "Blueberry",
+  "Raspberry",
+];
 
-
-  // Handle input
+// Handle input
 searchInput.addEventListener("input", () => {
-    const query = searchInput.value.toLowerCase();
-    suggestionsBox.innerHTML = ""; // Clear previous suggestions
-  
-    if (query) {
-      const filteredProducts = products.filter(product =>
-        product.toLowerCase().includes(query)
-      );
-  
-      filteredProducts.forEach(product => {
-        const suggestionItem = document.createElement("div");
-        suggestionItem.textContent = product;
-        suggestionItem.addEventListener("click", () => {
-          searchInput.value = product; // Set input value
-          suggestionsBox.classList.remove("active"); // Hide suggestions
-        });
-        suggestionsBox.appendChild(suggestionItem);
+  const query = searchInput.value.toLowerCase();
+  suggestionsBox.innerHTML = ""; // Clear previous suggestions
+
+  if (query) {
+    const filteredProducts = products.filter((product) =>
+      product.toLowerCase().includes(query)
+    );
+
+    filteredProducts.forEach((product) => {
+      const suggestionItem = document.createElement("div");
+      suggestionItem.textContent = product;
+      suggestionItem.addEventListener("click", () => {
+        searchInput.value = product; // Set input value
+        suggestionsBox.classList.remove("active"); // Hide suggestions
       });
-  
-      suggestionsBox.classList.add("active"); // Show suggestions
-    } else {
-      suggestionsBox.classList.remove("active"); // Hide suggestions
-    }
-  });
-  
-  // Hide suggestions when clicking outside
-  document.addEventListener("click", (event) => {
-    if (!searchInput.contains(event.target) && !suggestionsBox.contains(event.target)) {
-      suggestionsBox.classList.remove("active");
-    }
-  });
+      suggestionsBox.appendChild(suggestionItem);
+    });
+
+    suggestionsBox.classList.add("active"); // Show suggestions
+  } else {
+    suggestionsBox.classList.remove("active"); // Hide suggestions
+  }
+});
+
+// Hide suggestions when clicking outside
+document.addEventListener("click", (event) => {
+  if (
+    !searchInput.contains(event.target) &&
+    !suggestionsBox.contains(event.target)
+  ) {
+    suggestionsBox.classList.remove("active");
+  }
+});
