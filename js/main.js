@@ -543,7 +543,6 @@ function UpdateContent(lang) {
     ".featured-products.small-section"
   );
   const { sectionHeader, cards } = featuredProducts[lang];
-  console.log(featuredProductsSection, sectionHeader, cards);
 
   // Update section header
   const sectionTitle =
@@ -645,11 +644,6 @@ function UpdateContent(lang) {
   );
   const { EightCardssectionHeader, EightCards } =
     featuredProductsEightCards[lang];
-  console.log(
-    featuredProductsBiggerSection,
-    EightCardssectionHeader,
-    EightCards
-  );
 
   // Update section header
   const bigSectionTitle =
@@ -858,13 +852,11 @@ const prices = {
 const currencyToggle = document.getElementById("currencyToggle");
 currencyToggle.addEventListener("click", () => {
   if (currencyToggle.textContent === "JOD") {
-    updatePrices("JOD"); // Update prices to JOD
+    updatePrices("JOD");
     currencyToggle.textContent = "USD";
-    console.log("Currency toggled to JOD");
   } else {
     currencyToggle.textContent = "JOD";
-    updatePrices("USD"); // Update prices to USD
-    console.log("Currency toggled to USD");
+    updatePrices("USD");
   }
 });
 
@@ -1010,13 +1002,16 @@ document.addEventListener("click", (e) => {
 
 // Login popup
 const popup = document.getElementById("loginpopup");
-const openPopup = document.getElementById("openLogingPopup");
+const openPopup = document.querySelectorAll(".navbar .profile");
 const closePopup = document.getElementById("closePopup");
 
-openPopup.addEventListener("click", (e) => {
-  e.preventDefault();
-  popup.classList.add("show");
-});
+openPopup.forEach(ele => 
+  ele.addEventListener("click", (e) => {
+    e.preventDefault();
+    popup.classList.add("show");
+    navMenu.classList.remove("show-menu");
+  })
+)
 
 closePopup.addEventListener("click", () => {
   popup.classList.remove("show");
@@ -1027,6 +1022,7 @@ window.addEventListener("click", (event) => {
     popup.classList.remove("show");
   }
 });
+
 
 // Purchase popuup
 const PurchasePopup = document.getElementById("PurchasePopup");

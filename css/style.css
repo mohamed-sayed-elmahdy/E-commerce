@@ -493,14 +493,14 @@ header .toggle-btn:hover {
   align-items: center;
   font-size: 9px;
 }
-.navbar .nav__menu .icons-section a  .totalPrice {
+.navbar .nav__menu .icons-section a .totalPrice {
   display: flex;
   justify-content: flex-start;
- align-items: flex-start;
- gap: 5px;
- flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  flex-direction: column;
 }
-.navbar .nav__menu .icons-section a  .totalPrice .price {
+.navbar .nav__menu .icons-section a .totalPrice .price {
   font-weight: 700;
 }
 .-link {
@@ -831,12 +831,6 @@ header .toggle-btn:hover {
   }
 }
 
-
-
-
-
-
-
 /* Slider */
 
 .slider {
@@ -862,6 +856,7 @@ header .toggle-btn:hover {
   width: 1380px;
   max-width: 100vw;
   height: 100%;
+  object-fit: cover;
 }
 .slider .list video {
   margin: 0 auto;

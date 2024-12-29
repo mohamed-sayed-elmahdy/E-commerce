@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>search</title>
+    <link rel="stylesheet" href="css/search.css" />
+    <!-- Font awesome link-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <!-- Logo (Hidden on Desktop) -->
+        <div class="logo"><img src="images/logo.png" alt="logo" /></div>
+
+        <!-- Desktop Links -->
+        <nav class="desktop-links">
+            <a href="#">About us</a>
+            <a href="#">My account</a>
+            <a href="#">Wishlist</a>
+            <a href="#">Order Tracking</a>
+        </nav>
+
+        <!-- Right Side Menus -->
+        <div class="right-container">
+            <a href="#" class="contact-link">Contact us</a>
+
+            <!-- Language Toggle -->
+            <button id="languageToggle" class="toggle-btn">عربي</button>
+
+            <!-- Currency Toggle -->
+            <button id="currencyToggle" class="toggle-btn">JOD</button>
+        </div>
+    </header>
+    <nav class="navbar" id="header">
+        <div class="nav container">
+            <a href="#" class="nav__logo"><img src="images/logo.png" alt="logo" /></a>
+            <div class="left-section">
+                <div class="custom-menu">
+                    <div class="labelContainer">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <span>Delivery to</span>
+                            <span class="menu-label">Abu Dhabi</span>
+                        </div>
+                    </div>
+                    <ul class="menu-options">
+                        <li>Abu Dhabi</li>
+                        <li>Dubai</li>
+                        <li>Sharjah</li>
+                    </ul>
+                </div>
+
+                <div class="search-bar">
+                    <div class="input-container">
+                        <input type="text" placeholder="Search for products.." id="searchInput" />
+                        <div id="suggestions" class="suggestions"></div>
+                    </div>
+                    <button>Search</button>
+                </div>
+            </div>
+
+            <div class="nav__menu" id="nav-menu">
+                <div class="ProfileAndLocation">
+                    <a href="#" class="profile"><i class="fa-regular fa-user"></i>
+                        <span class="textIcon">Login <br />
+                            Account</span>
+                    </a>
+                    <div class="custom-menu" id="locationMenu">
+                        <div class="labelContainer">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <span>Delivery to</span>
+                                <span class="menu-label">Abu Dhabi</span>
+                            </div>
+                        </div>
+                        <ul class="menu-options">
+                            <li>Abu Dhabi</li>
+                            <li>Dubai</li>
+                            <li>Sharjah</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="icons-section">
+                    <a href="#">
+                        <i class="fa-regular fa-heart"> 
+                        <span class="badge">3</span></i>
+                        <span class="textIcon" id="mobileWishlist"> Wishlist</span>
+                    </a>
+                    <a href="#"><i class="fa-solid fa-cart-shopping price">
+                            <span class="badge">3</span></i>
+                            <div class="totalPrice">
+                            <span class="textIcon ">Your cart </span>
+
+                            <span class="price">$0.00</span>
+                        </div>
+                    </a>
+                </div>
+                <ul class="nav__list">
+                    <li class="nav__item dropdown">
+                      <a href="#" class="nav__link" id="productsLink">
+                        <span>Products</span>
+                        <i class="fa-solid fa-chevron-down drop"></i>
+                      </a>
+                      <ul class="dropdown__menu" id="productsDropdown">
+                        <li><a href="#">category 1</a></li>
+                        <li><a href="#">category 2</a></li>
+                        <li><a href="#">category 3</a></li>
+                      </ul>
+                    </li>
+                  
+                    <li class="nav__item">
+                      <a href="#" class="nav__link">
+                        <i class="fa-solid fa-bell"></i>
+                        <span>What's New</span>
+                      </a>
+                    </li>
+                  
+                    <li class="nav__item">
+                      <a href="#" class="nav__link">
+                        <i class="fa-solid fa-truck-fast"></i>
+                        <span>Delivery</span>
+                      </a>
+                    </li>
+                  
+                    <li class="nav__item">
+                      <a href="#" class="nav__link">
+                        <i class="fa-solid fa-tag"></i>
+                        <span>Deals & Offers</span>
+                      </a>
+                    </li>
+                  
+                    <li class="nav__item">
+                      <a href="#" class="nav__link">
+                        <i class="fa-solid fa-blog"></i>
+                        <span>Blog</span>
+                      </a>
+                    </li>
+                  
+                    <li class="nav__item">
+                      <a href="#" class="nav__link">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>Contact</span>
+                      </a>
+                    </li>
+                  </ul>
+                  
+           
+                <!-- Close Button -->
+                <div class="nav__close" id="nav-close">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+            </div>
+            <div class="leftIcons">
+                <div class="right-section">
+                    <a href="#" class="profile" id="openLogingPopup"><i class="fa-regular fa-user"></i>
+                        <span class="textIcon">Login <br />
+                            Account</span>
+                    </a>
+                    <a href="#"><i class="fa-regular fa-heart"> <span class="badge">3</span></i>
+                        <span class="textIcon" id="Wishlist"> Wishlist</span>
+                    </a>
+                    <a href="#"><i class="fa-solid fa-cart-shopping price">
+                            <span class="badge">3</span></i>
+                        <div class="totalPrice">
+                            <span class="textIcon cartText">Your cart </span>
+
+                            <span class="price">$0.00</span>
+                        </div>
+                    </a>
+                </div>
+                <!-- Toggle Button -->
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="thirdNav">
+        <div class="thirdNavContainer">
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <div class="nav__link dropdownMenuContainer">
+                            <!-- <i class="fa-solid fa-box"></i> -->
+                            <span>Products</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                            <div class="dropdownMenu">
+                                <a href="#" class="dropdownMenuItem">category 1</a>
+                                <a href="#" class="dropdownMenuItem">category 2</a>
+                                <div class="dropdownMenuItem subdropdown">
+                                    <div>category 3</div><i class="fa-solid fa-chevron-right"></i>
+                                    <div class=" subdropdownmenu">
+                                        <a href="#" class="dropdownMenuItem product">product 1</a>
+                                        <a href="#" class="dropdownMenuItem product">product 2</a>
+                                        <a href="#" class="dropdownMenuItem product">product 3</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">
+                            <i class="fa-solid fa-star"></i>
+                            <span>What's New</span>
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">
+                            <i class="fa-solid fa-truck"></i>
+                            <span>Delivery</span>
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">
+                            <i class="fa-solid fa-tags"></i>
+                            <span>Deals & Offers</span>
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">
+                            <i class="fa-solid fa-pen-nib"></i>
+                            <span>Blog</span>
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-inner">
+
+        <div class="custom-container">
+          <div class="search-section">
+            <div class="search-info">
+              <div class="footer-title">Find Your Courses</div>
+              <div class="text-gray">We found available courses just for you.</div>
+            </div>
+            <div class="search-form">
+              <div class="form-group">
+                <input type="text" class="form-input" placeholder="Enter your email">
+                <button class="btn-subscribe" type="submit">Subscribe</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="custom-container">
+          <div class="content">
+            <h3 class="big-text">Established</h3>
+            <div>
+              <div class="breadcrumb">
+                <ol>
+                  <li><a href="#">Home</a></li>
+                  <span>/</span>
+                  <li><a href="#">About Us</a></li>
+                  <span>/</span>
+                  <li class="active">Mission</li>
+                </ol>
+              </div>
+              <p>
+                8/5/1994. The idea of establishing the King Abdullah University Hospital began with the idea of establishing the
+                Jordan University of Science and Technology to be a center of <span class="highlight">excellence</span> in providing
+                high-quality health services and be a comprehensive transformational center locally and at the level of the Middle East.
+              </p>
+            </div>
+            <hr>
+            <div>
+              <div class="breadcrumb">
+                <ol>
+                  <li><a href="#">Home</a></li>
+                  <span>/</span>
+                  <li><a href="#">About Us</a></li>
+                  <span>/</span>
+                  <li class="active">Mission</li>
+                </ol>
+              </div>
+              <p>
+                8/5/1994. The idea of establishing the King Abdullah University Hospital began with the idea of establishing the
+                Jordan University of Science and Technology to be a center of <span class="highlight">excellence</span> in providing
+                high-quality health services and be a comprehensive transformational center locally and at the level of the Middle East.
+              </p>
+            </div>
+            <hr>
+            <div>
+              <div class="breadcrumb">
+                <ol>
+                  <li><a href="#">Home</a></li>
+                  <span>/</span>
+                  <li><a href="#">About Us</a></li>
+                  <span>/</span>
+                  <li class="active">Mission</li>
+                </ol>
+              </div>
+              <p>
+                8/5/1994. The idea of establishing the King Abdullah University Hospital began with the idea of establishing the
+                Jordan University of Science and Technology to be a center of <span class="highlight">excellence</span> in providing
+                high-quality health services and be a comprehensive transformational center locally and at the level of the Middle East.
+              </p>
+            </div>
+      
+       
+      
+            <div class="pagination-section">
+              <ul class="pagination">
+                <li><a href="#" aria-label="Next">&raquo;</a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#" aria-label="Previous">&laquo;</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo-section">
+                <a href="#"><img src="images/logo.png" alt="Logo" class="footer-logo" /></a>
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the industry's standard dummy text
+                    ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type.
+                </p>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#">My account</a></li>
+                    <li><a href="#">Log in</a></li>
+                    <li><a href="#">Wish list</a></li>
+                    <li><a href="#">My orders</a></li>
+                    <li><a href="#">Book</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">My account</a></li>
+                    <li><a href="#">Log in</a></li>
+                    <li><a href="#">Wish list</a></li>
+                    <li><a href="#">My orders</a></li>
+                    <li><a href="#">Book</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">My account</a></li>
+                    <li><a href="#">Log in</a></li>
+                    <li><a href="#">Wish list</a></li>
+                    <li><a href="#">My orders</a></li>
+                    <li><a href="#">Book</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-phone"></i><span> +977 564 5555 | +977 564 5555</span>
+                    </li>
+                    <li><i class="fas fa-envelope"></i><span> Email@domain.com</span></li>
+                    <li><i class="fas fa-globe"></i> <span>www.domain.com</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-payment">
+            <p>Available payment methods</p>
+            <div class="payment-logos">
+                <img src="images/naqdanLogo.png" alt="Naqdan" />
+                <img src="images/madaLogo.png" alt="Mada" />
+                <img src="images/masterLogo.png" alt="MasterCard" />
+                <img src="images/visaLogo.png" alt="Visa" />
+                <img src="images/gpayLogo.png" alt="Google Pay" />
+                <img src="images/appayLogo.png" alt="Apple Pay" />
+                <img src="images/stcpayLogo.png" alt="STC Pay" />
+                <img src="images/tamara.png" alt="Tamara" />
+                <img src="images/tabbyLogo.png" alt="Tabby" />
+            </div>
+        </div>
+    </footer>
+
+    <!-- popup Loginpopup -->
+    <div id="loginpopup" class="Loginpopup">
+        <div class="popup-content">
+            <span id="closePopup" class="close">
+                <i class="fas fa-times"></i>
+            </span>
+            <h2 class="LoginpopupTitle">Login</h2>
+            <form>
+                <input type="text" placeholder="Username" class="input-field" required />
+                <input type="password" placeholder="Password" class="input-field" required />
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- popup cartPop -->
+    <div id="PurchasePopup" class="PurchasePopup">
+        <div class="popup-content">
+            <span id="closePurchasePopup" class="close">
+                <i class="fas fa-times"></i>
+            </span>
+            <h2 class="Purchase-popup-title">Complete Your Purchase</h2>
+            <p> <span>You have added <span class="messageCart"> </span> to the shopping cart</span><i
+                    class="fas fa-shopping-cart"></i> </p>
+            </p>
+
+            <div class="cartButtons">
+                <button>
+                    Continue Shopping
+                </button>
+                <button>
+                    Complete Payment
+                </button>
+            </div>
+        </div>
+
+    </div>
+    <script src="js/search.js"></script>
+</body>
+
+</html>
